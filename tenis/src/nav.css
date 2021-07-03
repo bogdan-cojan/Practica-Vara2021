@@ -1,0 +1,57 @@
+.navBar {
+  display: flex;
+  min-height: 15vh;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(
+    to left bottom,
+    rgb(250, 255, 0),
+    rgb(255, 150, 0)
+  );
+  border-bottom: 2px solid black;
+}
+
+.logo img {
+  block-size: 87px;
+}
+
+.searchBar {
+  display: flex;
+  margin-left: 100px;
+}
+
+.searchBar img {
+  block-size: 36px;
+}
+
+.searchBar input {
+  width: 500px;
+  padding: 8px;
+  appearance: none;
+  border: none;
+  outline: none;
+  border-radius: 64px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 2px 3px rgba(0, 0, 0, 0.2);
+  color: #313131;
+  font-size: 15px;
+}
+
+.searchBar input:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.buttons {
+  display: flex;
+  width: 13%;
+  justify-content: space-evenly;
+}
+
+.button:hover {
+  zoom: 1.4;
+}
+
+.button img {
+  block-size: 36px;
+}

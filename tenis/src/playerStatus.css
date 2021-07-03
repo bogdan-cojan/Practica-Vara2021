@@ -1,0 +1,69 @@
+.bg {
+  background: rgb(255, 255, 255);
+  min-height: 80vh;
+  width: 60%;
+  background: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border: 2px solid white;
+  border-radius: 64px;
+  z-index: 5;
+  backdrop-filter: blur(16px);
+  display: flex;
+}
+
+.player {
+  background: rgb(255, 255, 255);
+  min-height: 80vh;
+  width: 60%;
+  background: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border: 2px solid white;
+  border-radius: 64px;
+  z-index: 5;
+  backdrop-filter: blur(16px);
+}
+
+.jocuri {
+  background: rgb(255, 255, 255);
+  min-height: 80vh;
+  width: 60%;
+  background: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border: 2px solid white;
+  border-radius: 64px;
+  z-index: 5;
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.total {
+  opacity: 50%;
+  background: blue;
+  min-height: 80vh;
+  width: 60%;
+  border: 2px solid white;
+  border-radius: 64px;
+  z-index: 5;
+  backdrop-filter: blur(16px);
+}
+
+.catigate {
+  background: red;
+  min-height: 80vh;
+  width: 60%;
+  border: 2px solid white;
+  border-radius: 64px;
+  z-index: 5;
+  backdrop-filter: blur(16px);
+}

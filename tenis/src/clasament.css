@@ -1,0 +1,49 @@
+.glass-top {
+  background: rgb(255, 255, 255);
+  min-height: 70vh;
+  width: 60%;
+  background: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border: 2px solid white;
+  border-radius: 64px;
+  z-index: 2;
+  backdrop-filter: blur(16px);
+}
+
+.tops {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.boys {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.girls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.eticheta {
+  display: flex;
+  background: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border: 1px solid white;
+  border-radius: 8px;
+  margin: 17px 4px;
+  padding: 9px;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.2);
+  justify-content: space-around;
+}

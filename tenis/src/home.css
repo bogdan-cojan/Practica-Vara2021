@@ -1,0 +1,131 @@
+main {
+  min-height: 85vh;
+  background: linear-gradient(
+    to right top,
+    rgb(250, 255, 0),
+    rgba(255, 150, 0)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ball1,
+.ball2 {
+  background: rgba(173, 255, 47, 0.8);
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.ball1 {
+  top: 30%;
+  right: 10%;
+}
+
+.ball2 {
+  bottom: 10%;
+  left: 10%;
+}
+
+.ball1::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  right: -70%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 7px solid white;
+}
+
+.ball1::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  right: 70%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 7px solid white;
+}
+
+.ball2::before {
+  content: "";
+  position: absolute;
+  bottom: 63%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 7px solid white;
+}
+
+.ball2::after {
+  content: "";
+  position: absolute;
+  bottom: -63%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 7px solid white;
+}
+
+.players {
+  display: flex;
+  width: 60%;
+  z-index: 2;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card {
+  display: flex;
+  background: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border: 2px solid white;
+  border-radius: 64px;
+  margin: 17px 4px;
+  padding: 9px;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.4);
+  justify-content: space-around;
+}
+
+.card img {
+  block-size: 64px;
+}
+
+.card h1,
+p {
+  color: black;
+  align-self: center;
+}
+
+.card:hover {
+  border: 2px solid black;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.buttons img {
+  block-size: 32px;
+}
+
+.button:hover {
+  zoom: 1.4;
+}
