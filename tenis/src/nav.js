@@ -33,9 +33,11 @@ function Nav() {
             <img src={top} />
           </div>
         </Link>
-        <div className="button">
-          <img src={add} />
-        </div>
+        <Link to="/add">
+          <div className="button">
+            <img src={add} />
+          </div>
+        </Link>
       </div>
     </div>
   );

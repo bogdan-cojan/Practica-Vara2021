@@ -5,24 +5,28 @@ import playerboy from "./icons/playerboy.svg";
 import edit from "./icons/edit.svg";
 import deletet from "./icons/deletet.svg";
 
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <main>
       <div className="players">
         <div className="cards" style={{ cursor: "pointer" }}>
-          <div className="card">
-            <img src={playergirl} />
-            <h1>Simona Halep</h1>
-            <p>Tara: Romania</p>
-            <div className="buttons" style={{ cursor: "pointer" }}>
-              <div className="button">
-                <img src={edit} />
-              </div>
-              <div className="button">
-                <img src={deletet} />
+          <Link to="/status" style={{ textDecoration: "none" }}>
+            <div className="card">
+              <img src={playergirl} />
+              <h1>Simona Halep</h1>
+              <p>Tara: Romania</p>
+              <div className="buttons" style={{ cursor: "pointer" }}>
+                <div className="button">
+                  <img src={edit} />
+                </div>
+                <div className="button">
+                  <img src={deletet} />
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
           <div className="card">
             <img src={playerboy} />
             <h1>Roger Federer</h1>

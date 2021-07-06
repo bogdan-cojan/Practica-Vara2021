@@ -1,23 +1,7 @@
-.bg {
-  background: rgb(255, 255, 255);
-  min-height: 80vh;
-  width: 60%;
-  background: linear-gradient(
-    to left bottom,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.3)
-  );
-  border: 2px solid white;
-  border-radius: 64px;
-  z-index: 5;
-  backdrop-filter: blur(16px);
-  display: flex;
-}
-
 .player {
   background: rgb(255, 255, 255);
-  min-height: 80vh;
-  width: 60%;
+  min-height: 75vh;
+  width: 30%;
   background: linear-gradient(
     to left bottom,
     rgba(255, 255, 255, 0.7),
@@ -25,45 +9,44 @@
   );
   border: 2px solid white;
   border-radius: 64px;
-  z-index: 5;
+  z-index: 2;
   backdrop-filter: blur(16px);
+  padding: 25px;
 }
 
-.jocuri {
-  background: rgb(255, 255, 255);
-  min-height: 80vh;
-  width: 60%;
-  background: linear-gradient(
-    to left bottom,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.3)
-  );
-  border: 2px solid white;
-  border-radius: 64px;
-  z-index: 5;
-  backdrop-filter: blur(16px);
+.pTop {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.textpTop {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-.total {
-  opacity: 50%;
-  background: blue;
-  min-height: 80vh;
-  width: 60%;
-  border: 2px solid white;
-  border-radius: 64px;
-  z-index: 5;
-  backdrop-filter: blur(16px);
+.pTop img {
+  block-size: 128px;
 }
 
-.catigate {
-  background: red;
-  min-height: 80vh;
-  width: 60%;
-  border: 2px solid white;
-  border-radius: 64px;
-  z-index: 5;
-  backdrop-filter: blur(16px);
+.pInfo {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+
+.follow {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.follow img {
+  block-size: 28px;
+}
+
+.follow img:hover {
+  zoom: 1.2;
 }
