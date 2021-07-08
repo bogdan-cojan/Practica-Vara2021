@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "./nav";
-import Home from "./home";
+import Home from "./list";
 import Clasament from "./clasament";
 import PlayerStatus from "./playerStatus";
 import Add from "./add";
