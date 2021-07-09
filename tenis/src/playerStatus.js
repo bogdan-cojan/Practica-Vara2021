@@ -5,14 +5,17 @@ import playerBoy from "./icons/playerboy.svg";
 import insta from "./icons/instagram.svg";
 import faceb from "./icons/facebook.svg";
 import twitee from "./icons/twitter.svg";
+import { useParams } from "react-router-dom";
 
 function PlayerStatus() {
+  let { id } = useParams();
+
   return (
     <main>
       <div className="player">
         <div className="pTop">
           <div className="textpTop">
-            <h1>Simona Halep</h1>
+            <h1>{id}</h1>
             <p>Tara: Romania</p>
           </div>
           <div>

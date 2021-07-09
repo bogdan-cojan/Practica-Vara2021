@@ -22,7 +22,7 @@ function Home() {
     <main>
       <div className="players">
         {players.map((player) => (
-          <Link to="/status" style={{ textDecoration: "none" }}>
+          <Link to={`status/${player.name}`} style={{ textDecoration: "none" }}>
             <Card
               image={player.image}
               name={player.name}
