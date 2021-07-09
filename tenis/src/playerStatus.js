@@ -21,6 +21,34 @@ function PlayerStatus() {
       locul_nasterii: "Constanta, Romania",
       antrenor: "Darren Cahill",
       clasament: "3",
+      instagram: (
+        <img
+          src={insta}
+          style={{ cursor: "pointer" }}
+          onClick={(event) =>
+            (window.location.href =
+              "https://www.instagram.com/simonahalep/?hl=ro")
+          }
+        />
+      ),
+      facebook: (
+        <img
+          src={faceb}
+          style={{ cursor: "pointer" }}
+          onClick={(event) =>
+            (window.location.href = "https://ro-ro.facebook.com/simonahalep")
+          }
+        />
+      ),
+      twitee: (
+        <img
+          src={twitee}
+          style={{ cursor: "pointer" }}
+          onClick={(event) =>
+            (window.location.href = "https://twitter.com/simona_halep")
+          }
+        />
+      ),
     },
     {
       image: <img src={playerBoy} />,
@@ -32,6 +60,33 @@ function PlayerStatus() {
       locul_nasterii: "Basel, Elvetia",
       antrenor: "Ivan Ljubicic",
       clasament: "8",
+      instagram: (
+        <img
+          src={insta}
+          style={{ cursor: "pointer" }}
+          onClick={(event) =>
+            (window.location.href = "https://www.instagram.com/rogerfederer/")
+          }
+        />
+      ),
+      facebook: (
+        <img
+          src={faceb}
+          style={{ cursor: "pointer" }}
+          onClick={(event) =>
+            (window.location.href = "https://www.facebook.com/Federer")
+          }
+        />
+      ),
+      twitee: (
+        <img
+          src={twitee}
+          style={{ cursor: "pointer" }}
+          onClick={(event) =>
+            (window.location.href = "https://twitter.com/rogerfederer")
+          }
+        />
+      ),
     },
   ];
 
@@ -60,28 +115,9 @@ function PlayerStatus() {
           <h1>Social Media</h1>
         </div>
         <div className="follow">
-          <img
-            src={insta}
-            style={{ cursor: "pointer" }}
-            onClick={(event) =>
-              (window.location.href =
-                "https://www.instagram.com/simonahalep/?hl=ro")
-            }
-          />
-          <img
-            src={faceb}
-            style={{ cursor: "pointer" }}
-            onClick={(event) =>
-              (window.location.href = "https://ro-ro.facebook.com/simonahalep")
-            }
-          />
-          <img
-            src={twitee}
-            style={{ cursor: "pointer" }}
-            onClick={(event) =>
-              (window.location.href = "https://twitter.com/simona_halep")
-            }
-          />
+          {info[getIndex(id)].instagram}
+          {info[getIndex(id)].facebook}
+          {info[getIndex(id)].twitee}
         </div>
       </div>
       <div className="ball1"></div>
