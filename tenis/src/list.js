@@ -21,15 +21,20 @@ function Home() {
   return (
     <main>
       <div className="players">
-        {players.map((player) => (
-          <Link to={`status/${player.name}`} style={{ textDecoration: "none" }}>
-            <Card
-              image={player.image}
-              name={player.name}
-              country={player.country}
-            />
-          </Link>
-        ))}
+        <div className="cards">
+          {players.map((player) => (
+            <Link
+              to={`status/${player.name}`}
+              style={{ textDecoration: "none" }}
+            >
+              <Card
+                image={player.image}
+                name={player.name}
+                country={player.country}
+              />
+            </Link>
+          ))}
+        </div>
       </div>
       <div className="ball1"></div>
       <div className="ball2"></div>

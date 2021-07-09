@@ -10,26 +10,53 @@ import { useParams } from "react-router-dom";
 function PlayerStatus() {
   let { id } = useParams();
 
+  const info = [
+    {
+      image: <img src={playerGirl} />,
+      name: "Simona Halep",
+      country: "Romania",
+      height: "1.68m",
+      age: "29 ani",
+      data_nasterii: "27 septembrie 1991",
+      locul_nasterii: "Constanta, Romania",
+      antrenor: "Darren Cahill",
+      clasament: "3",
+    },
+    {
+      image: <img src={playerBoy} />,
+      name: "Roger Federer",
+      country: "Elvetia",
+      height: "1.85m",
+      age: "39 ani",
+      data_nasterii: "08 august 1981",
+      locul_nasterii: "Basel, Elvetia",
+      antrenor: "Ivan Ljubicic",
+      clasament: "8",
+    },
+  ];
+
+  function getIndex(findName) {
+    return info.findIndex((obj) => obj.name === findName);
+  }
+
   return (
     <main>
       <div className="player">
         <div className="pTop">
           <div className="textpTop">
-            <h1>{id}</h1>
-            <p>Tara: Romania</p>
+            <h1>{info[getIndex(id)].name}</h1>
+            <p>Tara: {info[getIndex(id)].country}</p>
           </div>
-          <div>
-            <img src={playerGirl} />
-          </div>
+          <div>{info[getIndex(id)].image}</div>
         </div>
         <div className="pInfo">
           <h1>Biografie</h1>
-          <p>Inaltime: 1.68m</p>
-          <p>Varsta: 29 ani</p>
-          <p>Data nasterii: 27 septembrie 1991</p>
-          <p>Locul nasterii: Constanta, Romania</p>
-          <p>Antrenor: Darren Cahill</p>
-          <p>Clasament: 3</p>
+          <p>Inaltime: {info[getIndex(id)].height}</p>
+          <p>Varsta: {info[getIndex(id)].age}</p>
+          <p>Data nasterii: {info[getIndex(id)].data_nasterii}</p>
+          <p>Locul nasterii: {info[getIndex(id)].locul_nasterii}</p>
+          <p>Antrenor: {info[getIndex(id)].antrenor}</p>
+          <p>Clasament: {info[getIndex(id)].clasament}</p>
           <h1>Social Media</h1>
         </div>
         <div className="follow">
