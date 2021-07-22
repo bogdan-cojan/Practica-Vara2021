@@ -33,6 +33,11 @@ function PlayerStatus() {
     }
   }
 
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  };
+
   if (player == null) {
     return null;
   } else {
@@ -60,19 +65,17 @@ function PlayerStatus() {
             <img
               src={insta}
               style={{ cursor: "pointer" }}
-              onClick={(event) =>
-                (window.location.href = `${player.instagram}`)
-              }
+              onClick={() => openInNewTab(`${player.instagram}`)}
             />
             <img
               src={faceb}
               style={{ cursor: "pointer" }}
-              onClick={(event) => (window.location.href = `${player.facebook}`)}
+              onClick={() => openInNewTab(`${player.facebook}`)}
             />
             <img
               src={twitee}
               style={{ cursor: "pointer" }}
-              onClick={(event) => (window.location.href = `${player.twitee}`)}
+              onClick={() => openInNewTab(`${player.twitee}`)}
             />
           </div>
         </div>
