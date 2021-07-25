@@ -26,7 +26,7 @@ function PlayerStatus() {
   const [player, setPlayer] = useState();
 
   function gen() {
-    if (player.image === "playerboy") {
+    if (player.sex === "playerboy") {
       return <img src={playerboy} />;
     } else {
       return <img src={playergirl} />;
@@ -46,7 +46,7 @@ function PlayerStatus() {
         <div className="player">
           <div className="pTop">
             <div className="textpTop">
-              <h1>{player.name}</h1>
+              <h1>{player.nume}</h1>
               <p>Tara: {player.tara}</p>
             </div>
             <div>{gen()}</div>
@@ -75,7 +75,7 @@ function PlayerStatus() {
             <img
               src={twitee}
               style={{ cursor: "pointer" }}
-              onClick={() => openInNewTab(`${player.twitee}`)}
+              onClick={() => openInNewTab(`${player.twitter}`)}
             />
           </div>
         </div>

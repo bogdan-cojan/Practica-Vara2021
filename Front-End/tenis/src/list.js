@@ -29,8 +29,8 @@ function Home() {
               style={{ textDecoration: "none" }}
             >
               <Card
-                image={player.image}
-                name={player.name}
+                image={player.sex}
+                name={player.nume}
                 country={player.tara}
               />
             </Link>
