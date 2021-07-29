@@ -44,5 +44,15 @@ namespace apiTenis.Models
             }
         }
 
+        public void Delete(Guid Id)
+        {
+            using(IDbConnection dbConnection = Connection)
+            {
+                string sQuery = @"delete from playersTable where id=@Id";
+                dbConnection.Open();
+                dbConnection.Execute(sQuery, new { Id });
+            }
+        }
+
     }
 }

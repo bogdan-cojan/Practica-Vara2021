@@ -15,17 +15,24 @@ namespace apiTenis.Controllers
         {
             playerRepository = new PlayerRepository();
         }
-        
+
         [Route("/players")]
         public IEnumerable<Player> GetList()
         {
             return playerRepository.GetAllPlayers();
         }
 
-       [Route("/players/{id}")]
+        [Route("/players/{id}")]
         public Player GetInfo(Guid Id)
         {
             return playerRepository.GetById(Id);
+        }
+
+        [Route("/players/{id}")]
+        [HttpDelete]
+        public void DeletePlayer(Guid Id)
+        {
+            playerRepository.Delete(Id);
         }
 
     }

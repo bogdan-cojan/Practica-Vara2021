@@ -14,15 +14,21 @@ function Carduri(props) {
   }
 
   return (
-    <div className="card">
+    <div className="card" style={{ cursor: "pointer" }}>
       {gen()}
       <h1>{props.name}</h1>
       <p>Tara: {props.country}</p>
-      <div className="buttons" style={{ cursor: "pointer" }}>
-        <div className="button">
+      <div className="buttons">
+        <div className="button" style={{ cursor: "pointer" }}>
           <img src={edit} />
         </div>
-        <div className="button">
+        <div
+          className="button"
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            props.onDeletePlayer(props.id);
+          }}
+        >
           <img src={deletet} />
         </div>
       </div>

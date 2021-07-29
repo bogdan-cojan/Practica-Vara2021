@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 function Home() {
   const [players, setPlayers] = useState([]);
+  const [refresh, setRefresh] = useState(0);
 
   useEffect(() => {
     function getPlayers() {
@@ -16,24 +17,41 @@ function Home() {
     }
 
     getPlayers();
-  }, []);
+  }, [refresh]);
+
+  function handleOnDeletePlayer(id) {
+    fetch("http://localhost:5000/players/" + id, {
+      method: "DELETE",
+    }).then((response) => {
+      setRefresh(refresh + 1);
+
+      // setPlayers(
+      //   players.filter((value) => {
+      //     return value.id != id;
+      //   })
+      // );
+    });
+  }
 
   return (
     <main>
       <div className="players">
         <div className="cards">
           {players.map((player, index) => (
-            <Link
+            //   <Link
+            //     key={index}
+            //     to={`status/${player.id}`}
+            //     style={{ textDecoration: "none" }}
+            //  >
+            <Card
               key={index}
-              to={`status/${player.id}`}
-              style={{ textDecoration: "none" }}
-            >
-              <Card
-                image={player.sex}
-                name={player.nume}
-                country={player.tara}
-              />
-            </Link>
+              id={player.id}
+              image={player.sex}
+              name={player.nume}
+              country={player.tara}
+              onDeletePlayer={handleOnDeletePlayer}
+            />
+            // </Link>
           ))}
         </div>
       </div>

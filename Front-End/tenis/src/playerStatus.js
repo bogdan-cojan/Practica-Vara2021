@@ -16,7 +16,6 @@ function PlayerStatus() {
         .then((response) => response.json())
         .then((data) => {
           setPlayer(data);
-          console.log(data);
         });
     }
 
