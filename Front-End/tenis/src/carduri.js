@@ -4,7 +4,15 @@ import deletet from "./icons/deletet.svg";
 import playergirl from "./icons/playergirl.svg";
 import playerboy from "./icons/playerboy.svg";
 
+import { useHistory } from "react-router-dom";
+
 function Carduri(props) {
+  let history = useHistory();
+
+  function handleClickStatus() {
+    history.push(`/status/${props.id}`);
+  }
+
   function gen() {
     if (props.image === "playerboy") {
       return <img src={playerboy} />;
@@ -14,7 +22,13 @@ function Carduri(props) {
   }
 
   return (
-    <div className="card" style={{ cursor: "pointer" }}>
+    <div
+      className="card"
+      style={{ cursor: "pointer" }}
+      onClick={() => {
+        handleClickStatus();
+      }}
+    >
       {gen()}
       <h1>{props.name}</h1>
       <p>Tara: {props.country}</p>
@@ -25,7 +39,8 @@ function Carduri(props) {
         <div
           className="button"
           style={{ cursor: "pointer" }}
-          onClick={() => {
+          onClick={(event) => {
+            event.stopPropagation();
             props.onDeletePlayer(props.id);
           }}
         >

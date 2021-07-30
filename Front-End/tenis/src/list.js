@@ -3,8 +3,6 @@ import "./list.css";
 
 import Card from "./carduri";
 
-import { Link } from "react-router-dom";
-
 function Home() {
   const [players, setPlayers] = useState([]);
   const [refresh, setRefresh] = useState(0);
@@ -38,11 +36,6 @@ function Home() {
       <div className="players">
         <div className="cards">
           {players.map((player, index) => (
-            //   <Link
-            //     key={index}
-            //     to={`status/${player.id}`}
-            //     style={{ textDecoration: "none" }}
-            //  >
             <Card
               key={index}
               id={player.id}
@@ -51,7 +44,6 @@ function Home() {
               country={player.tara}
               onDeletePlayer={handleOnDeletePlayer}
             />
-            // </Link>
           ))}
         </div>
       </div>
