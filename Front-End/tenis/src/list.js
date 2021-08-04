@@ -5,7 +5,7 @@ import Card from "./carduri";
 
 function Home() {
   const [players, setPlayers] = useState([]);
-  const [refresh, setRefresh] = useState(0);
+  const [refresh, setRefresh] = useState({});
 
   useEffect(() => {
     function getPlayers() {
@@ -21,13 +21,7 @@ function Home() {
     fetch("http://localhost:5000/players/" + id, {
       method: "DELETE",
     }).then((response) => {
-      setRefresh(refresh + 1);
-
-      // setPlayers(
-      //   players.filter((value) => {
-      //     return value.id != id;
-      //   })
-      // );
+      setRefresh({});
     });
   }
 

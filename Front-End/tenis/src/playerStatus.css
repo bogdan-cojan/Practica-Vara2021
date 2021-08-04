@@ -50,3 +50,17 @@
 .follow img:hover {
   zoom: 1.2;
 }
+
+.edit-input {
+  width: 200px;
+  border-radius: 16px;
+  border: 1px solid white;
+  outline: none;
+  padding: 2px;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.edit-input:focus {
+  border: 1px solid black;
+}

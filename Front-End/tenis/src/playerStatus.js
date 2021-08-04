@@ -9,20 +9,22 @@ import { useParams } from "react-router-dom";
 
 function PlayerStatus() {
   let { id } = useParams();
+  const [player, setPlayer] = useState([]);
+  const [refresh, setRefresh] = useState();
 
   useEffect(() => {
-    function getPlayer() {
-      fetch(`http://localhost:5000/players/${id}`)
-        .then((response) => response.json())
-        .then((data) => {
-          setPlayer(data);
-        });
+    if (id != null) {
+      setRefresh(id);
     }
+  });
 
-    getPlayer();
-  }, []);
-
-  const [player, setPlayer] = useState();
+  useEffect(() => {
+    fetch(`http://localhost:5000/players/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setPlayer(data);
+      });
+  }, [refresh]);
 
   function gen() {
     if (player.sex === "playerboy") {
