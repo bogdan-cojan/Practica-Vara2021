@@ -35,5 +35,19 @@ namespace apiTenis.Controllers
             playerRepository.Delete(Id);
         }
 
+        [Route("/players")]
+        [HttpPost]
+        public void Post([FromBody]Player player)
+        {
+             playerRepository.Add(player);
+        }
+
+        [Route("/players/{id}")]
+        [HttpPatch]
+        public void Patch(Guid Id,[FromBody] Player player)
+        {
+             playerRepository.Update(Id,player);
+        }
+
     }
 }

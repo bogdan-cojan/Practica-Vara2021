@@ -3,8 +3,8 @@ import "./clasament.css";
 
 function Clasament() {
   const [players, setPlayers] = useState([]);
-  const boys = players.filter((player) => player.sex == "playerboy");
-  const girls = players.filter((player) => player.sex == "playergirl");
+  const boys = players.filter((player) => player.sex == "masculin");
+  const girls = players.filter((player) => player.sex == "feminin");
   const sortedBoys = boys.sort(
     (firstItem, secondItem) => firstItem.clasament - secondItem.clasament
   );

@@ -1,7 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import "./add.css";
 
 function Add() {
+  const [name, setName] = useState("");
+  const [tara, setTara] = useState("");
+  const [sex, setSex] = useState("");
+  const [height, setHeight] = useState("");
+  const [age, setAge] = useState("");
+  const [date, setDate] = useState("");
+  const [location, setLocation] = useState("");
+  const [coach, setCoach] = useState("");
+  const [rank, setRank] = useState("");
+  const [insta, setInsta] = useState("");
+  const [facebook, setFacebook] = useState("");
+  const [twitter, setTwitter] = useState("");
+
+  const player = {
+    nume: name,
+    tara: tara,
+    sex: sex,
+    height: height,
+    age: age,
+    data_nasterii: date,
+    locul_nasterii: location,
+    antrenor: coach,
+    clasament: rank,
+    instagram: insta,
+    facebook: facebook,
+    twitter: twitter,
+  };
+
+  function AddPlayer() {
+    alert("Jucator adaugat cu succes !");
+    fetch("http://localhost:5000/players", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(player),
+    });
+  }
+
   return (
     <main>
       <div className="add-player">
@@ -22,21 +61,87 @@ function Add() {
             <p>Twitter: </p>
           </div>
           <div className="add-input">
-            <input />
-            <input />
-            <input />
-            <input />
-            <input />
-            <input />
-            <input />
-            <input />
-            <input />
-            <input />
-            <input />
-            <input />
+            <input
+              type="text"
+              onChange={(event) => {
+                setName(event.target.value);
+              }}
+            />
+            <input
+              type="text"
+              onChange={(event) => {
+                setTara(event.target.value);
+              }}
+            />
+            <input
+              type="text"
+              onChange={(event) => {
+                setSex(event.target.value);
+              }}
+            />
+            <input
+              type="text"
+              onChange={(event) => {
+                setHeight(event.target.value);
+              }}
+            />
+            <input
+              type="text"
+              onChange={(event) => {
+                setAge(event.target.value);
+              }}
+            />
+            <input
+              type="text"
+              onChange={(event) => {
+                setDate(event.target.value);
+              }}
+            />
+            <input
+              type="text"
+              onChange={(event) => {
+                setLocation(event.target.value);
+              }}
+            />
+            <input
+              type="text"
+              onChange={(event) => {
+                setCoach(event.target.value);
+              }}
+            />
+            <input
+              type="text"
+              onChange={(event) => {
+                setRank(event.target.value);
+              }}
+            />
+            <input
+              type="text"
+              onChange={(event) => {
+                setInsta(event.target.value);
+              }}
+            />
+            <input
+              type="text"
+              onChange={(event) => {
+                setFacebook(event.target.value);
+              }}
+            />
+            <input
+              type="text"
+              onChange={(event) => {
+                setTwitter(event.target.value);
+              }}
+            />
           </div>
         </div>
-        <button className="save" style={{ cursor: "pointer" }}>
+        <button
+          className="save"
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            AddPlayer();
+          }}
+        >
           Salveaza
         </button>
       </div>

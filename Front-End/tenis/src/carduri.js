@@ -13,8 +13,12 @@ function Carduri(props) {
     history.push(`/status/${props.id}`);
   }
 
+  function handleClickEdit() {
+    history.push(`/edit/${props.id}`);
+  }
+
   function gen() {
-    if (props.image === "playerboy") {
+    if (props.image === "masculin") {
       return <img src={playerboy} />;
     } else {
       return <img src={playergirl} />;
@@ -33,7 +37,14 @@ function Carduri(props) {
       <h1>{props.name}</h1>
       <p>Tara: {props.country}</p>
       <div className="buttons">
-        <div className="button" style={{ cursor: "pointer" }}>
+        <div
+          className="button"
+          style={{ cursor: "pointer" }}
+          onClick={(event) => {
+            event.stopPropagation();
+            handleClickEdit();
+          }}
+        >
           <img src={edit} />
         </div>
         <div

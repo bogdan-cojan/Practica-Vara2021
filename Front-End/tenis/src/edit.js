@@ -9,22 +9,40 @@ import { useParams } from "react-router-dom";
 
 function PlayerStatus() {
   let { id } = useParams();
-  const [player, setPlayer] = useState([]);
-  const [refresh, setRefresh] = useState();
 
   useEffect(() => {
-    if (id != null) {
-      setRefresh(id);
+    function getPlayer() {
+      fetch(`http://localhost:5000/players/${id}`)
+        .then((response) => response.json())
+        .then((data) => {
+          setPlayer(data);
+        });
     }
-  });
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/players/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setPlayer(data);
-      });
-  }, [refresh]);
+    getPlayer();
+  }, []);
+
+  const [player, setPlayer] = useState([]);
+  const [age, setAge] = useState("");
+  const [antrenor, setAntrenor] = useState("");
+  const [clasament, setClasament] = useState("");
+
+  const edit = {
+    age: age,
+    antrenor: antrenor,
+    clasament: clasament,
+  };
+
+  function EditPlayer() {
+    alert("Salvare cu succes !");
+    fetch("http://localhost:5000/players/" + id, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(edit),
+    });
+  }
 
   function gen() {
     if (player.sex === "masculin") {
@@ -55,11 +73,47 @@ function PlayerStatus() {
           <div className="pInfo">
             <h1>Biografie</h1>
             <p>Inaltime: {player.height}</p>
-            <p>Varsta: {player.age}</p>
+            <p>
+              Varsta:{" "}
+              <input
+                className="edit-input"
+                type="text"
+                onChange={(event) => {
+                  setAge(event.target.value);
+                }}
+              />
+            </p>
             <p>Data nasterii: {player.data_nasterii}</p>
             <p>Locul nasterii: {player.locul_nasterii}</p>
-            <p>Antrenor: {player.antrenor}</p>
-            <p>Clasament: {player.clasament}</p>
+            <p>
+              Antrenor:{" "}
+              <input
+                className="edit-input"
+                type="text"
+                onChange={(event) => {
+                  setAntrenor(event.target.value);
+                }}
+              />
+            </p>
+            <p>
+              Clasament:{" "}
+              <input
+                className="edit-input"
+                type="text"
+                onChange={(event) => {
+                  setClasament(event.target.value);
+                }}
+              />
+            </p>
+            <button
+              className="save"
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                EditPlayer();
+              }}
+            >
+              Salveaza
+            </button>
             <h1>Social Media</h1>
           </div>
           <div className="follow">
