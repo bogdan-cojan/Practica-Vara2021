@@ -16,30 +16,14 @@
   block-size: 87px;
 }
 
-.searchBar {
-  display: flex;
-  margin-left: 100px;
-}
-
-.searchBar img {
-  block-size: 36px;
-}
-
-.searchBar input {
-  width: 500px;
-  padding: 8px;
-  appearance: none;
-  border: none;
-  outline: none;
-  border-radius: 64px;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 2px 3px rgba(0, 0, 0, 0.2);
+span {
+  text-shadow: 3px 2px 1px rgba(255, 255, 255, 0.9);
   color: #313131;
-  font-size: 15px;
-}
-
-.searchBar input:focus {
-  background-color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  font-size: 42px;
+  margin-left: 90px;
+  line-height: 47px;
+  letter-spacing: 2px;
 }
 
 .buttons {

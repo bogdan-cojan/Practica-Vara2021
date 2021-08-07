@@ -10,13 +10,6 @@ import { useParams } from "react-router-dom";
 function PlayerStatus() {
   let { id } = useParams();
   const [player, setPlayer] = useState([]);
-  const [refresh, setRefresh] = useState();
-
-  useEffect(() => {
-    if (id != null) {
-      setRefresh(id);
-    }
-  });
 
   useEffect(() => {
     fetch(`http://localhost:5000/players/${id}`)
@@ -24,7 +17,7 @@ function PlayerStatus() {
       .then((data) => {
         setPlayer(data);
       });
-  }, [refresh]);
+  }, []);
 
   function gen() {
     if (player.sex === "masculin") {

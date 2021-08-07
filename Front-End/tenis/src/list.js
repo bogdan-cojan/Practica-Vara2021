@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./list.css";
+import lupa from "./icons/search.svg";
 
 import Card from "./carduri";
 
 function Home() {
   const [players, setPlayers] = useState([]);
   const [refresh, setRefresh] = useState({});
+  const [q, setQ] = useState("");
+  const [searchParam] = useState(["nume"]);
 
   useEffect(() => {
     function getPlayers() {
@@ -25,11 +28,34 @@ function Home() {
     });
   }
 
+  function search(players) {
+    return players.filter((player) => {
+      return searchParam.some((newItem) => {
+        return (
+          player[newItem].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
+        );
+      });
+    });
+  }
+
   return (
     <main>
+      <div className="searchBar">
+        <div>
+          <img src={lupa} />
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="Cauta jucator..."
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+          />
+        </div>
+      </div>
       <div className="players">
         <div className="cards">
-          {players.map((player, index) => (
+          {search(players).map((player, index) => (
             <Card
               key={index}
               id={player.id}
