@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace apiTenis.Models
 {
-    public class PlayerRepository
+    public class PlayerRepository : IPlayerRepository
     {
         private string connectionString;
         public PlayerRepository()

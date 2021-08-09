@@ -9,11 +9,11 @@ namespace apiTenis.Controllers
 {
     public class PlayersController : ControllerBase
     {
-        private readonly PlayerRepository playerRepository;
-               
-        public PlayersController()
+        private readonly IPlayerRepository playerRepository;
+
+        public PlayersController(IPlayerRepository repository)
         {
-            playerRepository = new PlayerRepository();
+            playerRepository = repository;
         }
 
         [Route("/players")]
