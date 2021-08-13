@@ -10,27 +10,27 @@ namespace apiTenis.Tests
 {
     public class PlayersControllerTests
     {
+        Mock<IPlayerRepository> playerRepository = new Mock<IPlayerRepository>();
+
         [Fact]
         public void GetListTest()
         {
             // Arange
-            var players = new List<Player>() { new Player() { nume="Bogdan" } };
-            var playerRepository = new Mock<IPlayerRepository>();
-            playerRepository.Setup(foo => foo.GetAllPlayers()).Returns(players);
+            var player = new List<Player>() { new Player() { nume="Bogdan" } };
+            playerRepository.Setup(foo => foo.GetAllPlayers()).Returns(player);
             var controller = new PlayersController(playerRepository.Object);
 
             // Act
             var response = controller.GetList().ToList();
 
             // Assert
-            Assert.Equal(players.Count,response.Count);
+            Assert.Equal(player.Count,response.Count);
         }
 
         [Fact]
         public void GetInfoTest()
         { 
             // Arange
-            var playerRepository = new Mock<IPlayerRepository>();
             var guid = new Guid("a24d4a6c-abbc-40d9-b4af-55e626a1ef75");
             playerRepository.Setup(x => x.GetById(guid))
                 .Returns(new Player { ID = guid });
@@ -47,18 +47,16 @@ namespace apiTenis.Tests
         public void DeletePlayerTest()
         {
             // Arange
-            var action = new Guid("a24d4a6c-abbc-40d9-b4af-55e626a1ef75");
-            Mock<IPlayerRepository> mockIPlayerRepository = new Mock<IPlayerRepository>();
             var guid = new Guid("a24d4a6c-abbc-40d9-b4af-55e626a1ef75");
-            mockIPlayerRepository.Setup(mock => mock.Delete(guid));
+            playerRepository.Setup(mock => mock.Delete(guid));
 
             // Act
-            PlayersController myClass = new PlayersController(mockIPlayerRepository.Object);
-            myClass.DeletePlayer(action);
+            PlayersController controller = new PlayersController(playerRepository.Object);
+            controller.DeletePlayer(guid);
 
             // Assert
-            mockIPlayerRepository.Verify(mock => mock.Delete(guid), Times.Once());
-            mockIPlayerRepository.VerifyAll();
+            playerRepository.Verify(mock => mock.Delete(guid), Times.Once());
+            playerRepository.VerifyAll();
         }
 
         [Fact]
@@ -67,16 +65,15 @@ namespace apiTenis.Tests
             // Arange
             var guid = new Guid("a24d4a6c-abbc-40d9-b4af-55e626a1ef75");
             Player player = new Player{ ID = guid, nume = "Bogdan", tara = "Franta" };
-            Mock<IPlayerRepository> mockIPlayerRepository = new Mock<IPlayerRepository>();
-            mockIPlayerRepository.Setup(mock => mock.Add(player));
+            playerRepository.Setup(mock => mock.Add(player));
 
             // Act
-            PlayersController myClass = new PlayersController(mockIPlayerRepository.Object);
-            myClass.Post(player);
+            PlayersController controller = new PlayersController(playerRepository.Object);
+            controller.Post(player);
 
             // Assert
-            mockIPlayerRepository.Verify(mock => mock.Add(player), Times.Once());
-            mockIPlayerRepository.VerifyAll();
+            playerRepository.Verify(mock => mock.Add(player), Times.Once());
+            playerRepository.VerifyAll();
         }
 
         [Fact]
@@ -85,16 +82,15 @@ namespace apiTenis.Tests
             // Arange
             var guid = new Guid("a24d4a6c-abbc-40d9-b4af-55e626a1ef75");
             Player player = new Player { ID = guid, nume = "Bogdan", tara = "Franta" };
-            Mock<IPlayerRepository> mockIPlayerRepository = new Mock<IPlayerRepository>();
-            mockIPlayerRepository.Setup(mock => mock.Update(guid, player));
+            playerRepository.Setup(mock => mock.Update(guid, player));
 
             // Act
-            PlayersController myClass = new PlayersController(mockIPlayerRepository.Object);
-            myClass.Patch(guid, player);
+            PlayersController controller = new PlayersController(playerRepository.Object);
+            controller.Patch(guid, player);
 
             // Assert
-            mockIPlayerRepository.Verify(mock => mock.Update(guid, player), Times.Once());
-            mockIPlayerRepository.VerifyAll();
+            playerRepository.Verify(mock => mock.Update(guid, player), Times.Once());
+            playerRepository.VerifyAll();
         }
     }
 }
