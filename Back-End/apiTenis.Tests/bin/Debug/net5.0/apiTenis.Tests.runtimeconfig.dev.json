@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\cojan\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\cojan\\.nuget\\packages"
-    ]
-  }
-}
