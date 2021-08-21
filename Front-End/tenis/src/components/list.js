@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./list.css";
-import lupa from "./icons/search.svg";
+import "../css/list.css";
+import lupa from "../icons/search.svg";
 
 import Card from "./carduri";
 

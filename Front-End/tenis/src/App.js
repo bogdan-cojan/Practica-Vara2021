@@ -1,10 +1,10 @@
 import React from "react";
-import Nav from "./nav";
-import Home from "./list";
-import Clasament from "./clasament";
-import PlayerStatus from "./playerStatus";
-import Add from "./add";
-import EditPlayer from "./edit";
+import Nav from "./components/nav";
+import Home from "./components/list";
+import Clasament from "./components/clasament";
+import PlayerStatus from "./components/playerStatus";
+import Add from "./components/add";
+import EditPlayer from "./components/edit";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 

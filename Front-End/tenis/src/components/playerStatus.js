@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./playerStatus.css";
-import playergirl from "./icons/playergirl.svg";
-import playerboy from "./icons/playerboy.svg";
-import insta from "./icons/instagram.svg";
-import faceb from "./icons/facebook.svg";
-import twitee from "./icons/twitter.svg";
+import "../css/playerStatus.css";
+import playergirl from "../icons/playergirl.svg";
+import playerboy from "../icons/playerboy.svg";
+import insta from "../icons/instagram.svg";
+import faceb from "../icons/facebook.svg";
+import twitee from "../icons/twitter.svg";
 import { useParams } from "react-router-dom";
 
 function PlayerStatus() {

@@ -1,8 +1,8 @@
 import React from "react";
-import edit from "./icons/edit.svg";
-import deletet from "./icons/deletet.svg";
-import playergirl from "./icons/playergirl.svg";
-import playerboy from "./icons/playerboy.svg";
+import edit from "../icons/edit.svg";
+import deletet from "../icons/deletet.svg";
+import playergirl from "../icons/playergirl.svg";
+import playerboy from "../icons/playerboy.svg";
 
 import { useHistory } from "react-router-dom";
 

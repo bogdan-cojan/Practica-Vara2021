@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./add.css";
+import "../css/add.css";
 
 function Add() {
   const [name, setName] = useState("");
@@ -43,7 +43,7 @@ function Add() {
 
   return (
     <main>
-      <div className="add-player">
+      <div className="add-player" data-testid="add-player">
         <h1>Adauga jucator nou</h1>
         <div className="add-player2">
           <div className="add-text">

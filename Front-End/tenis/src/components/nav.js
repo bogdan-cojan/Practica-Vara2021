@@ -1,9 +1,9 @@
 import React from "react";
-import "./nav.css";
-import logo from "./icons/tennis32px.svg";
-import home from "./icons/home.svg";
-import top from "./icons/top.svg";
-import add from "./icons/add.svg";
+import "../css/nav.css";
+import logo from "../icons/tennis32px.svg";
+import home from "../icons/home.svg";
+import top from "../icons/top.svg";
+import add from "../icons/add.svg";
 
 import { Link } from "react-router-dom";
 

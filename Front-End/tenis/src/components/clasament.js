@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./clasament.css";
+import "../css/clasament.css";
 
 function Clasament() {
   const [players, setPlayers] = useState([]);
@@ -20,11 +20,11 @@ function Clasament() {
 
   return (
     <main>
-      <section className="glass-top">
+      <section className="glass-top" data-testid="glass-top">
         <div className="tops">
           <div className="boys">
             <h1>Top - Baieti</h1>
-            <div className="etichete">
+            <div className="etichete" data-testid="etichete">
               {sortedBoys.map((sortboy, i) => (
                 <div className="eticheta" key={i}>
                   <p>{sortboy.nume}</p>
@@ -35,7 +35,7 @@ function Clasament() {
           </div>
           <div className="girls">
             <h1>Top - Fete</h1>
-            <div className="etichete">
+            <div className="etichete" data-testid="etichete">
               {sortedGirls.map((sortgirl, i) => (
                 <div className="eticheta" key={i}>
                   <p>{sortgirl.nume}</p>
