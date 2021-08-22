@@ -62,6 +62,7 @@ function Add() {
           </div>
           <div className="add-input">
             <input
+              data-testid="input-test"
               type="text"
               onChange={(event) => {
                 setName(event.target.value);
@@ -137,6 +138,7 @@ function Add() {
         </div>
         <button
           className="save"
+          data-testid="button"
           style={{ cursor: "pointer" }}
           onClick={() => {
             AddPlayer();
