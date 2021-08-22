@@ -1,3 +1,5 @@
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/bogda-cojan/Practica-Vara2021/main?style=for-the-badge)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
