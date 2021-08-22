@@ -1,4 +1,4 @@
-![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fbeng0IsLive)
+![Twitter URL](www.twitter.com)
 
 # Getting Started with Create React App
 
